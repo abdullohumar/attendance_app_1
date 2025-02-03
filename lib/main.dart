@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ui_face/ui/home_screen.dart';
-// import 'package:dotted_border/dotted_border.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: 'AIzaSyDhSYIZWpYeYWignx-Kvw_VwUcrgrisueE', //current_key
+      appId: "1:146300987438:android:eca5d2e553fd2bec86d7bf", //mobilesdk_app_id 
+      messagingSenderId: '146300987438',//project_number 
+      projectId: 'attendance-app-2c6c2' //project_id
+    )
+  );
   runApp(const MyApp());
 }
 
